@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-sensors"
+    version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>SensorsRegister</name>
+    <js-module name="SensorsRegister" src="www/SensorsRegister.js">
+        <clobbers target="cordova.plugins.sensors.SensorsRegister" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SensorsRegister">
+                <param name="android-package"
+                    value="cordova.plugin.sensors.SensorsRegister" />
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/SensorsRegister.java"
+            target-dir="src/cordova/plugin/sensors" />
+
+        <framework src="com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.3.5" />
+        <framework src="com.sensorsdata.analytics.android:android-gradle-plugin2:3.4.7" />
+
+
+        <preference name="SaServiceUrl" value=""></preference>
+        <preference name="SaParamsChannel" value="" />
+    </platform>
+
+</plugin>
