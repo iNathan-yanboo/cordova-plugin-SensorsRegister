@@ -13,6 +13,9 @@
                     value="cordova.plugin.sensors.SensorsRegister" />
                 <param name="onload" value="true"/>
             </feature>
+
+            <preference name="SaServiceUrl" value="a"></preference>
+            <preference name="SaParamsChannel" value="a" />
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"></config-file>
         <source-file src="src/android/SensorsRegister.java"
@@ -21,9 +24,6 @@
         <framework src="com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.3.5" />
         <framework src="com.sensorsdata.analytics.android:android-gradle-plugin2:3.4.7" />
 
-
-        <preference name="SaServiceUrl" value=""></preference>
-        <preference name="SaParamsChannel" value="" />
     </platform>
 
 </plugin>
